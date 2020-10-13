@@ -9,7 +9,6 @@ public class DetailDto {
 
 	private String nomorInduk;
 	private String nama;
-	private String kelas;
 	private String mataPelajaran;
-	private String nilai;
+	private Double nilai;
 }

@@ -33,6 +33,6 @@ public class NilaiId implements Serializable{
 				return false;
 		} else if (!nomorInduk.equals(other.nomorInduk))
 			return false;
-		return false;
+		return true;
 	}
 }

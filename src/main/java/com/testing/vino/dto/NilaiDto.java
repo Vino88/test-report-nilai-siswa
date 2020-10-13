@@ -7,7 +7,5 @@ import lombok.Setter;
 @Setter
 public class NilaiDto {
 
-	private String nomorInduk;
-	private String mataPelajaran;
-	private Integer nilai;
+	private Double nilai;
 }
