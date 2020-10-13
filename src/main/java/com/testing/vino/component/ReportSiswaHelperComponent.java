@@ -72,7 +72,8 @@ public class ReportSiswaHelperComponent {
 		
 		for(Nilai n : listNilai) {
 			DetailDto dto = new DetailDto();
-			dto.setNomorInduk(n.getNomorInduk());
+			dto.setId(n.getId());
+			dto.setNomorInduk(n.getSiswa().getNomorInduk());
 			dto.setMataPelajaran(n.getMataPelajaran());
 			dto.setNilai(n.getNilai());
 			dto.setNama(n.getSiswa().getNama());
@@ -82,16 +83,16 @@ public class ReportSiswaHelperComponent {
 		return new Response<List<DetailDto>>(content);
 	}
 	
-	public void updateNilai(String nomorInduk, Double score) {
-		Nilai nilai = nilaiRepository.findFirstById(nomorInduk);
-		if(nilai != null && nilai.getNomorInduk() != null) {
+	public void updateNilai(String id, Double score) {
+		Nilai nilai = nilaiRepository.findFirstById(id);
+		if(nilai != null && nilai.getId() != null) {
 			nilai.setNilai(score);
 			nilaiRepository.save(nilai);
 		}
 	}
 	
-	public void delete(String nomorInduk) {
-		Nilai nilai = nilaiRepository.findFirstById(nomorInduk);
+	public void delete(String id) {
+		Nilai nilai = nilaiRepository.findFirstById(id);
 		if(nilai != null) {
 			nilaiRepository.delete(nilai);
 		}

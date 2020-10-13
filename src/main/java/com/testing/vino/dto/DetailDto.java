@@ -7,6 +7,7 @@ import lombok.Setter;
 @Setter
 public class DetailDto {
 
+	private String id;
 	private String nomorInduk;
 	private String nama;
 	private String mataPelajaran;

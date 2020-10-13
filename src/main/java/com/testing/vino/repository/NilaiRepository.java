@@ -17,6 +17,6 @@ public interface NilaiRepository extends PagingAndSortingRepository<Nilai, Nilai
 								@Param("mataPelajaran") String mataPelajaran,
 								@Param("nilai") Double nilai);
 	
-	@Query(nativeQuery = true, value = "select * from nilai where nomor_induk=:nomorInduk")
-	Nilai findFirstById(@Param("nomorInduk") String nomorInduk);
+	@Query(nativeQuery = true, value = "select * from nilai where id=:id")
+	Nilai findFirstById(@Param("id") String id);
 }

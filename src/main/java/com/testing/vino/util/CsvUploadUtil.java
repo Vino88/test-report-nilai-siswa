@@ -52,10 +52,10 @@ public class CsvUploadUtil {
 						
 					}else if(file.getName().equals("nilai.csv")) {
 						Nilai nilai = new Nilai();
-						nilai.setNomorInduk(s[0]);
+						Siswa siswa = siswaRepository.getOne(s[0]);
+						nilai.setSiswa(siswa);
 						nilai.setMataPelajaran(s[1].toString());
 						nilai.setNilai(Double.valueOf(s[2]));
-						nilai.setSiswa(nilai.getSiswa());
 						
 						nilaiRepository.save(nilai);
 						
